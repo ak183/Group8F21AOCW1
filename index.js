@@ -13,10 +13,13 @@ app.use(express.json());
 
 /* Routes to be imported */
 const user = require("./routes/user/user");
-const patient = require("./routes/patient/patient_create_edit");
+const patient = require("./routes/patient/registeration/patient_create_edit");
+const treatment = require("./routes/patient/treatment/patient_complaint");
+
 
 app.use('/user', user);
-app.use("/patient", patient);
+app.use("/patient/registeration", patient);
+app.use("/treatment", treatment);
 
 
 
