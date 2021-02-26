@@ -123,7 +123,6 @@ router.post('/addlabresult',checkdoctor,async(req,res)=>{
 /* --------------DELETE LAB REULT--------------
 --------------------------------------------  */
 router.post('/dellabresult',checkdoctor,async(req,res)=>{
-
     const {error}=validation.dellabresult(req.body)
     if(error) return res.send({"error":error.details[0].message})
 
