@@ -14,9 +14,11 @@ app.use(express.json());
 /* Routes to be imported */
 const user = require("./routes/user/user");
 const patient = require("./routes/patient/patient_create_edit");
+const patientTreatment = require("./routes/patientTreatment/patient_complaint");
 
 app.use('/user', user);
 app.use("/patient", patient);
+app.use("/patientTreatment", patientTreatment);
 
 
 
@@ -26,7 +28,7 @@ if (result.parsed.NODE_ENV === 'development'){
 }
 
 mongoose.connect(
-    "mongodb://localhost:27017/HMS",
+    "mongodb://localhost:27017/hospitalmanagementsystem",
     { useNewUrlParser: true, useUnifiedTopology: true },
     () => console.log("connected to database")
   );
